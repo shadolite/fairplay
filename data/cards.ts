@@ -1,37 +1,33 @@
-import { ResponsibilityCategory } from "./category"
+import { Category, Split } from "@/types/enums";
+import { ResponsibilityEntity } from "@/types/responsibilityEntity";
 
-export type ResponsibilityEntity = {
-    id: string;
-    category: ResponsibilityCategory;
-    definition: string;
-    dailyGrind: boolean;
-    happinessTrio: boolean;
-    split: boolean;
+export const getCards = () => {
+    let cards = [];
 }
 
-export class Responsibilities {
+class Responsibilities {
     static readonly BathingAndGrooming = {
         id: "Bathing and Grooming",
-        category: ResponsibilityCategory.Caregiving,
+        category: Category.caregiving,
         definition: "The nature of this cardholder\’s responsibilities changes depending on your kids\’ ages, but the point is that your kids need to brush their teeth, bathe, wash their faces, cut their nails, and brush their hair.",
         dailyGrind: true,
         happinessTrio: false,
-        split: true
+        split: Split.kid
     } as ResponsibilityEntity;
     static readonly 'Car' = {
         id: "Car",
         definition: "",
         dailyGrind: false,
         happinessTrio: false,
-        category: ResponsibilityCategory.Out,
-        split: false
+        category: Category.out,
+        split: Split.none
     } as ResponsibilityEntity;
-    static readonly SelfCare= {
+    static readonly SelfCare = {
         id: "Self-Care",
         definition: "",
         dailyGrind: true,
         happinessTrio: true,
-        category: ResponsibilityCategory.Home,
-        split: true
+        category: Category.home,
+        split: Split.adult
     } as ResponsibilityEntity;
 }

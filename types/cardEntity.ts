@@ -1,6 +1,6 @@
-import { CardStatusEnum } from "./cardStatus";
-import { PersonEntity } from "./person";
-import { ResponsibilityEntity } from "./responsibility";
+import { Status } from "./enums";
+import { PersonEntity } from "./personEntity";
+import { ResponsibilityEntity } from "./responsibilityEntity";
 
 export type CardEntity = {
     responsibility: ResponsibilityEntity;
@@ -8,7 +8,7 @@ export type CardEntity = {
     planning: string;
     execution: string;
     minimum: string;
-    status: CardStatusEnum;
+    status: Status;
     subject?: PersonEntity;
     player?: PersonEntity;
 }

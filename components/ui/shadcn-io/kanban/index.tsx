@@ -29,9 +29,10 @@ import {
 } from 'react';
 import { createPortal } from 'react-dom';
 import tunnel from 'tunnel-rat';
-import { Card } from '@/components/ui/card';
+import { CardComponent } from '@/components/ui/cardComponent';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
+import { CardEntity } from '@/types/cardEntity';
 
 const t = tunnel();
 
@@ -119,7 +120,7 @@ export const KanbanCard = <T extends KanbanItemProps = KanbanItemProps>({
   return (
     <>
       <div style={style} {...listeners} {...attributes} ref={setNodeRef}>
-        <Card
+        <CardComponent
           className={cn(
             'cursor-grab gap-4 rounded-md p-3 shadow-sm',
             isDragging && 'pointer-events-none cursor-grabbing opacity-30',
@@ -127,11 +128,11 @@ export const KanbanCard = <T extends KanbanItemProps = KanbanItemProps>({
           )}
         >
           {children ?? <p className="m-0 font-medium text-sm">{name}</p>}
-        </Card>
+        </CardComponent>
       </div>
       {activeCardId === id && (
         <t.In>
-          <Card
+          <CardComponent
             className={cn(
               'cursor-grab gap-4 rounded-md p-3 shadow-sm ring-2 ring-primary',
               isDragging && 'cursor-grabbing',
@@ -139,7 +140,7 @@ export const KanbanCard = <T extends KanbanItemProps = KanbanItemProps>({
             )}
           >
             {children ?? <p className="m-0 font-medium text-sm">{name}</p>}
-          </Card>
+          </CardComponent>
         </t.In>
       )}
     </>
