@@ -1,5 +1,5 @@
 {
-  "name": "fairplay",
+  "name": "operation-shuffle",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
