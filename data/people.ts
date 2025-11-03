@@ -1,6 +1,5 @@
 import { PersonEntity } from "@/types/personEntity";
 
-
 export class People {
     static readonly Amy = { id: "1", name: "Amy", isPlayer: true, color: '#f2a18bff' } as PersonEntity;
     static readonly Mitchell = { id: "2", name: "Mitchell", isPlayer: true, color: '#764d26ff' } as PersonEntity;
@@ -14,5 +13,9 @@ export class People {
 
     public static getPlayers = () => {
         return this.getAll().filter(p => p.isPlayer);
+    }
+
+    public static getKids = () => {
+        return this.getAll().filter(p => !p.isPlayer);
     }
 }
