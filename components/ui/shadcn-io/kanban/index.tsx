@@ -32,7 +32,6 @@ import tunnel from 'tunnel-rat';
 import { CardComponent } from '@/components/ui/cardComponent';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { CardEntity } from '@/types/cardEntity';
 
 const t = tunnel();
 
