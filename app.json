@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Operation Shuffle",
-    "slug": "Operation Shuffle",
+    "slug": "OperationShuffle",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,6 +12,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "jsEngine": "hermes",
     "ios": {
       "supportsTablet": true
     },

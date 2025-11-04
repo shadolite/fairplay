@@ -7,28 +7,31 @@ import { v4 as getUuid } from 'uuid';
 export const getCards = (): CardEntity[] => {
   let cards = [] as CardEntity[];
   responsibilities.filter(r => r.split == Split.kid).forEach(r => {
-    cards.concat(People.getKids().map(kid => {
-      return {
+    People.getKids().forEach(kid => {
+      cards.push({
         id: getUuid(),
+        name: `${r.id} (${kid.name})`,
         responsibility: r,
         subject: kid
-      } as CardEntity
-    }))
+      } as CardEntity)
+    })
   });
   responsibilities.filter(r => r.split == Split.adult).forEach(r => {
-    cards.concat(People.getPlayers().map(player => {
-      return {
+    People.getPlayers().forEach(player => {
+      cards.push({
         id: getUuid(),
+        name: `${r.id} (${player.name})`,
         responsibility: r,
         subject: player
-      } as CardEntity
-    }))
+      } as CardEntity)
+    })
   });
   responsibilities.filter(r => r.split == Split.none).forEach(r => {
-    cards.concat({
+    cards.push({
       id: getUuid(),
+      name: r.id,
       responsibility: r
-    } as CardEntity)
+    } as CardEntity);
   });
 
   return cards;
